@@ -1,0 +1,25 @@
+{
+  "bitwise": true,
+  "browser": true,
+  "camelcase": true,
+  "curly": true,
+  "forin": true,
+  "globals": {
+    // mocha
+    "describe": false,
+    "it": false,
+    "mocha": false,
+
+    // svg.js
+    "SVG": false
+  },
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "nonbsp": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "trailing": true
+}
