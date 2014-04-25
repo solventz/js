@@ -1,0 +1,17 @@
+{
+  "name": "solventz-js",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solventz/js"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "jshint": "*",
+    "mocha": "*",
+  },
+  "scripts": {
+    "pretest": "jslint $(find . -name '*.js')"
+    "test": "mocha $(find . -name '*_test.js')"
+  }
+}
