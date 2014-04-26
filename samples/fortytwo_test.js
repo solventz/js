@@ -1,4 +1,4 @@
-define(['node_modules/chai/chai', 'samples/fortytwo'], function(chai, fortytwo) {
+define(['chai', 'mocha', 'samples/fortytwo'], function(chai, mocha, fortytwo) {
   'use strict';
   var expect = chai.expect;
   describe('fortytwo', function() {
