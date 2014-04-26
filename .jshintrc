@@ -10,8 +10,12 @@
     "it": false,
     "mocha": false,
 
-    // svg.js
-    "SVG": false
+    // mocha-phantomjs
+    "mochaPhantomJS": false,
+
+    // requirejs
+    "define": false,
+    "require": false
   },
   "immed": true,
   "latedef": true,

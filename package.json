@@ -9,9 +9,11 @@
     "chai": "*",
     "jshint": "*",
     "mocha": "*",
+    "mocha-phantomjs": "*",
+    "requirejs": "*"
   },
   "scripts": {
-    "pretest": "jslint $(find . -name '*.js')"
-    "test": "mocha $(find . -name '*_test.js')"
+    "pretest": "jshint $(find . -name '*.js' -not -path './node_modules/*')",
+    "test": "mocha-phantomjs tests.html"
   }
 }
