@@ -1,4 +1,9 @@
-define(['chai', 'mocha', 'samples/fortytwo'], function(chai, mocha, fortytwo) {
+define(['chai',
+        'mocha',
+        'samples/fortytwo'],
+       function(chai,
+                unusedMocha,
+                fortytwo) {
   'use strict';
   var expect = chai.expect;
   describe('fortytwo', function() {
