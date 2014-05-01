@@ -11,6 +11,9 @@ define(['chai',
       it('should solve small input', function() {
         expect(multiplesOfThreeAndFive.bruteforce(10)).to.equal(23); 
       });
+      it('should solve large input', function() {
+        expect(multiplesOfThreeAndFive.bruteforce(1000)).to.equal(233168); 
+      });
     });
   });
 });
