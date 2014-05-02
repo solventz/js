@@ -7,13 +7,25 @@ define(['chai',
   'use strict';
   var expect = chai.expect;
   describe('multiplesOfThreeAndFive', function() {
-    describe('bruteforce', function() {
-      it('should solve small input', function() {
-        expect(multiplesOfThreeAndFive.bruteforce(10)).to.equal(23); 
+    var solutions = {
+      bruteForce: multiplesOfThreeAndFive.bruteForce,
+      linearSum: multiplesOfThreeAndFive.linearSum
+    };
+    var describeSolution = function(name, solution) {
+      describe(name, function() {
+        it('should solve small input', function() {
+          expect(solution(10)).to.equal(23); 
+        });
+        it('should solve large input', function() {
+          expect(solution(1000)).to.equal(233168); 
+        });
       });
-      it('should solve large input', function() {
-        expect(multiplesOfThreeAndFive.bruteforce(1000)).to.equal(233168); 
-      });
-    });
+    };
+    for (var name in solutions) {
+      if (solutions.hasOwnProperty(name)) {
+        var solution = solutions[name];
+        describeSolution(name, solution);
+      }
+    }
   });
 });
