@@ -14,7 +14,7 @@ define([], function() {
     var sumFromOneToK = function(k) {
       return k * (k + 1) / 2;
     };
-    return 3 * sumFromOneToK(Math.floor(n / 3) +
+    return 3 * sumFromOneToK(Math.floor(n / 3)) +
         5 * sumFromOneToK(Math.floor(n / 5)) -
         15 * sumFromOneToK(Math.floor(n / 15));
   };
