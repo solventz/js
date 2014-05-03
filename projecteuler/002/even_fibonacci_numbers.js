@@ -20,6 +20,10 @@ define([], function() {
     var sum = 0;
     do {
       // Every third fibonacci number is even starting with 2
+      // Odd + Even = Odd
+      // Even + Odd = Odd
+      // Odd + Odd = Even
+      //
       // f_{n+1} = f_n + f_{n-1}
       // f_{n+2} = f_{n+1} + f_n
       //         = (f_n + f_{n-1}) + f_n
