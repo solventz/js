@@ -16,7 +16,8 @@ require.config({
 require(['mocha'], function() {
   'use strict';
   require(['samples/fortytwo_test',
-           'projecteuler/001/multiples_of_three_and_five_test'],
+           'projecteuler/001/multiples_of_three_and_five_test',
+           'projecteuler/002/even_fibonacci_numbers_test'],
           function() {
     if (window.mochaPhantomJS) {
       mochaPhantomJS.run();
