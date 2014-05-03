@@ -8,7 +8,8 @@ define(['chai',
   var expect = chai.expect;
   describe('evenFibonacciNumbers', function() {
     var solutions = {
-      bruteForce: evenFibonacciNumbers.bruteForce
+      bruteForce: evenFibonacciNumbers.bruteForce,
+      everyThird: evenFibonacciNumbers.everyThird
     };
     var describeSolution = function(name, solution) {
       describe(name, function() {
