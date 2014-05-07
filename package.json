@@ -5,6 +5,9 @@
     "type": "git",
     "url": "https://github.com/solventz/js"
   },
+  "dependencies": {
+    "bignumber.js": "*"
+  },
   "devDependencies": {
     "chai": "*",
     "jshint": "*",
