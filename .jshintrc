@@ -5,6 +5,9 @@
   "curly": true,
   "forin": true,
   "globals": {
+    // js
+    "console": false,
+
     // mocha
     "describe": false,
     "it": false,

@@ -6,7 +6,7 @@
     "url": "https://github.com/solventz/js"
   },
   "dependencies": {
-    "bignumber.js": "*"
+    "bignumber.js": ">=v1.4.0"
   },
   "devDependencies": {
     "chai": "*",
