@@ -19,7 +19,8 @@ require(['mocha'], function() {
   require(['samples/fortytwo_test',
            'projecteuler/001/multiples_of_three_and_five_test',
            'projecteuler/002/even_fibonacci_numbers_test',
-           'projecteuler/003/largest_prime_factor_test'],
+           'projecteuler/003/largest_prime_factor_test',
+           'projecteuler/004/largest_palindrome_product_test'],
           function() {
     if (window.mochaPhantomJS) {
       mochaPhantomJS.run();
