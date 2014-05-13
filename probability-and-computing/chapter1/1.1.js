@@ -21,7 +21,60 @@ define([], function() {
     return coinTosses;
   };
   var sampleSpace = coinTossesOfLength(10);
+  var predicateA = function(run) {
+    var numHeads = 0;
+    var numTails = 0;
+    for (var i = 0; i < run.length; i++) {
+      if (run[i] == 'H') {
+        numHeads += 1;
+      } else if (run[i] == 'T') {
+        numTails += 1;
+      }
+    }
+    return numHeads == numTails;
+  };
+  var predicateB = function(run) {
+    var numHeads = 0;
+    var numTails = 0;
+    for (var i = 0; i < run.length; i++) {
+      if (run[i] == 'H') {
+        numHeads += 1;
+      } else if (run[i] == 'T') {
+        numTails += 1;
+      }
+    }
+    return numHeads > numTails;
+  };
+  var predicateC = function(run) {
+    for (var i = 0; i < run.length; i++) {
+      if (run[i] != run[run.length - 1 - i]) {
+        return false;
+      }
+    }
+    return true;
+  };
+  var predicateD = function(run) {
+    var consecutiveHeads = 0;
+    for (var i = 0; i < run.length; i++) {
+      if (run[i] == 'H') {
+        consecutiveHeads += 1;
+        if (consecutiveHeads == 4) {
+          return true;
+        }
+      } else {
+        consecutiveHeads = 0;
+      }
+    }
+    return false;
+  };
+  var probabilityFunction = function(events) {
+    return events.length / Math.pow(2, 10);
+  };
   return {
-    sampleSpace: sampleSpace
+    sampleSpace: sampleSpace,
+     a: probabilityFunction(sampleSpace.filter(predicateA)),
+     b: probabilityFunction(sampleSpace.filter(predicateB)),
+     c: probabilityFunction(sampleSpace.filter(predicateC)),
+     d: probabilityFunction(sampleSpace.filter(predicateD))
   };
 });
