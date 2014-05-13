@@ -1,6 +1,6 @@
 define(['chai',
         'mocha',
-        'probability-and-computing/chapter1/1.1.js'],
+        'probability-and-computing/chapter1/1.1'],
        function(chai,
                 unusedMocha,
                 exercise) {
