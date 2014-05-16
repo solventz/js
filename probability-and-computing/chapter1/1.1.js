@@ -6,8 +6,8 @@
 define([], function() {
   'use strict';
   var coinTossesOfLength = function(n) {
-    if (n === 1) {
-      return ['H', 'T'];
+    if (n === 0) {
+      return [''];
     }
     var coinTosses = [];
     var shorterRuns = coinTossesOfLength(n - 1);
