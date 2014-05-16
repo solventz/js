@@ -6,7 +6,7 @@ define(['chai',
                 exercise) {
   'use strict';
   var expect = chai.expect;
-  describe('probability-and-computing-exercise-1.2', function() {
+  describe('probability-and-computing/chapter1/1.2', function() {
     describe('sampleSpace', function() {
       it('has the expected size', function() {
         expect(exercise.sampleSpace.length).to.equal(36);
