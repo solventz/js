@@ -15,7 +15,6 @@ define(['chai',
     it('answers a', function() {
       // (a) The two dice show the same number.
       // So it's the diagonal of the 6x6 matrix, so 6/36
-      // 10! / (5!5!) = 252
       expect(exercise.a).to.equal(6 / 36);
     });
     it('answers b', function() {
