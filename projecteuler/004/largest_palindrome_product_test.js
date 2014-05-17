@@ -8,7 +8,7 @@ define(['bignumber',
                 largestPalindromeProduct) {
   'use strict';
   var expect = chai.expect;
-  describe('largestPalindromeProduct', function() {
+  describe('projecteuler/004/largest_palindrome_product', function() {
     describe('reverseDigits', function() {
       it('should reverse digits', function() {
         expect(largestPalindromeProduct.reverseDigits(42)).to.equal(24);
