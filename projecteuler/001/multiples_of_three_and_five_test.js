@@ -6,7 +6,7 @@ define(['chai',
                 multiplesOfThreeAndFive) {
   'use strict';
   var expect = chai.expect;
-  describe('multiplesOfThreeAndFive', function() {
+  describe('projectruler/001/multiples_of_three_and_five', function() {
     var solutions = {
       bruteForce: multiplesOfThreeAndFive.bruteForce,
       linearSum: multiplesOfThreeAndFive.linearSum

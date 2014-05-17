@@ -6,7 +6,7 @@ define(['chai',
                 evenFibonacciNumbers) {
   'use strict';
   var expect = chai.expect;
-  describe('evenFibonacciNumbers', function() {
+  describe('projecteuler/002/even_fibonacci_numbers', function() {
     var solutions = {
       bruteForce: evenFibonacciNumbers.bruteForce,
       everyThird: evenFibonacciNumbers.everyThird

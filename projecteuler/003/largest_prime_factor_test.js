@@ -8,7 +8,7 @@ define(['bignumber',
                 largestPrimeFactor) {
   'use strict';
   var expect = chai.expect;
-  describe('largestPrimeFactor', function() {
+  describe('projecteuler/003/largest_prime_factor', function() {
     var solutions = {
       bruteForce: largestPrimeFactor.bruteForce,
     };
