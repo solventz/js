@@ -27,7 +27,6 @@ define(['chai',
           return;
         }
       }
-      console.log(positiveSamples);
       expect(positiveSamples / maxSamples).to.be.within(p - allowedError * p, p + allowedError * p);
     };
     describe('sampler', function() {
