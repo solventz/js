@@ -16,65 +16,51 @@ define([], function() {
     }
     return a;
   };
-  var sampleSpaceSampler = function() {
+  var sampler = (function() {
     var cards = new Array(52);
     for (var i = 0; i < cards.length; i++) {
       cards[i] = i;
     }
-    return shuffle(cards);
-  };
-  var predicateConvergenceVerifier = function(predicate) {
-    return function(expectedProbability) {
-      var positiveSamples = 0;
-      var numCloseConsecutiveSamples = 0;
-      var maxSamples = 1000000;
-      for (var samples = 1; samples <= maxSamples; samples++) {
-        var cards = sampleSpaceSampler();
-        if (predicate(cards)) {
-          positiveSamples += 1;
-        }
-        var observedProbability = positiveSamples / samples;
-        var difference = Math.abs(observedProbability - expectedProbability);
-        if (difference < 0.001 * expectedProbability) {
-          numCloseConsecutiveSamples++;
-        }
-        if (numCloseConsecutiveSamples > 100) {
-          return observedProbability;
-        }
-      }
-      return positiveSamples / maxSamples;
+    return function() {
+      return shuffle(cards);
     };
+  })();
+  var rank = function(card) {
+    return card % 13;
   };
-  /*var predicateA = function(run) {
-    return run[0] == 51 || run[1] == 51;
+  var predicateA = function(cards) {
+    return rank(cards[0]) == 12 || rank(cards[1]) == 12;
   };
-  var predicateB = function(run) {
+  var predicateB = function(cards) {
     for (var i = 0; i < 5; i++) {
-      if (run[i] == 51) {
+      if (rank(cards[i]) == 12) {
         return true;
       }
     }
     return false;
   };
-  var predicateC = function(run) {
-    return run[0] == run[1];
-  };*/
+  var predicateC = function(cards) {
+    return rank(cards[0]) == rank(cards[1]);
+  };
   var predicateD = function(cards) {
-    var firstCards = {};
+    var rankCounts = {};
     for (var i = 0; i < 5; i++) {
-      firstCards[cards[i]] = firstCards[cards[i]] + 1 || 1;
-      if (Object.keys(firstCards).length > 2) {
+      var cardRank = rank(cards[i]);
+      rankCounts[cardRank] = rankCounts[cardRank] + 1 || 1;
+      if (Object.keys(rankCounts).length > 2) {
         return false;
       }
-      if (firstCards[cards[i]] == 4) {
+      if (rankCounts[cardRank] == 4) {
         return false;
       }
     }
     return true;
   };
   return {
-    sampleSpaceSampler: sampleSpaceSampler,
-    predicateConvergenceVerifier: predicateConvergenceVerifier,
+    sampler: sampler,
+    predicateA: predicateA,
+    predicateB: predicateB,
+    predicateC: predicateC,
     predicateD: predicateD
   };
 });
